@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Liu+Jian+Mao+Cao&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: aquamarine;
+  font-family: 'Lato', sans-serif;
+}
+
+.contenedor{
+  width: 90%;
+  max-width: 1000px;
+  padding: 40px 20px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/*--- estilos de tarjeta ----*/
+.tarjeta{
+  width: 100%;
+  max-width: 550px;
+  position: relative;
+  color: #fff;
+  transition: .3s ease all;
+  transform: rotateY(0deg);
+  transform-style: preserve-3d;
+  cursor: pointer;
+  z-index: 2;
+
+}
+.tarjeta.active{
+  transform: rotateY(180deg);
+}
+.tarjeta > div {
+  padding: 30px;
+  border-radius: 15px;
+  min-height: 315px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 10px 0 rgba(90, 116, 148, 0.3);
+}
+
+/*----- tarjeta frontal --------*/
+
+.tarjeta .frontal {
+ width: 100%;
+ background: url(../img/img-target/fondo2.jpg);
+ background-size: cover;
+ backface-visibility: hidden;
+ max-height: 100px;
+}
+
+.frontal .logo-marca{
+  text-align: right;
+  min-height: 50px;
+}
+
+.frontal .logo-marca img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: 80px;
+}
+.frontal .chip{
+  width: 100%;
+  max-width: 54px;
+  margin-bottom: 30px;
+}
+.frontal .grupo .label{
+  font-size: 16px;
+  color: rgb(197 197 197);
+  margin-bottom: 5px;
+}
+.frontal .grupo .numero,
+.frontal .grupo .nombre,
+.frontal .grupo .expiracion{
+  color: rgb(255, 255, 255);
+  font-size: 22px;
+  text-transform: uppercase;
+}
+.frontal .flexbox{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+/*----- tarjeta posterior --------*/
+
+.posterior{
+  background: url(../img/img-target/fondo2.jpg);
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+.posterior .barra-magnetica{
+  height: 40px;
+  background: black;
+  width: 100%;
+  position: absolute;
+  top: 30px;
+  left: 0;
+}
+
+.posterior .datos {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+.posterior .datos p {
+  margin-bottom: 5px;
+}
+.posterior .datos #firma {
+  width: 70%;
+}
+.posterior .datos #firma .firma{
+  height: 40px;
+  background: repeating-linear-gradient(skyblue 0, skyblue 5px, orange 5px, orange 10px);
+}
+.posterior .datos #firma .firma p {
+  line-height: 40px;
+  font-family: 'Liu Jian Mao Cao', cursive;
+  color: black;
+  font-size: 30px;
+  padding: 0 10px;
+  text-transform: capitalize;
+}
+.posterior .datos #ccv {
+  width: 20%;
+}
+.posterior .datos #ccv .ccv {
+  background-color: #fff;
+  height: 40px;
+  color: black;
+  padding: 10px;
+  text-align: center;
+}
+
+.posterior .leyenda {
+  font-size: 14px;
+  color: white;
+}
+
+/* ----contendero del boton----- */
+.contenedor-btn .btn-abrir-formulario{
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  line-height: 20px;
+  background: #0e1014;
+  color: white;
+  position: relative;
+  top: -25px;
+  z-index: 3;
+  border-radius: 100%;
+  box-shadow: -5px 4px 8px rgba(58, 51, 51, 0.4);
+  padding: 5px;
+  transition: all .2s ease;
+  border: none;
+  cursor: pointer;
+  border: 2px solid #06ff06;
+
+}
+.contenedor-btn .btn-abrir-formulario:hover{
+  background: #2e2f30;
+
+}
+.contenedor-btn .btn-abrir-formulario.active{
+  transform: rotate(45deg);
+}
+
+/*-- formulario Tarjeta -----*/
+.formulario-tarjeta{
+  background: #000000;
+  width: 100%;
+  max-width: 700px;
+  padding: 150px 30px 30px 30px;
+  border-radius: 10px;
+  position: relative;
+  top: -150px;
+  z-index: 1;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition: clip-path .3s ease-out;
+}
+.formulario-tarjeta.active {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.formulario-tarjeta label {
+  display: block;
+  color: #a7a9ad;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+.formulario-tarjeta input,
+.formulario-tarjeta select,
+.btn-enviar {
+  border: 2px solid white;
+  font-size: 18px;
+  height: 50px;
+  width: 100%;
+  padding: 5px 12px;
+  transition: .3s ease all;
+  border-radius: 5px;
+}
+.formulario-tarjeta input:hover,
+.formulario-tarjeta select:hover {
+  border: 2px solid #938DED;
+
+}
+.formulario-tarjeta input:focus,
+.formulario-tarjeta select:focus {
+  outline: rgba(4,4,4);
+  box-shadow: 1px 7px 10px -5px rgba(90, 116, 148, 0.3);
+}
+.formulario-tarjeta input {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.formulario-tarjeta .flexbox{
+  display: flex;
+  justify-content: space-between;
+}
+.formulario-tarjeta .expira {
+  width: 100%;
+}
+.formulario-tarjeta .ccv {
+  min-width: 100px;
+}
+.formulario-tarjeta .grupo-select{
+  width: 100%;
+  margin-right: 15px;
+  position: relative;
+}
+.formulario-tarjeta select {
+  -webkit-appearance: none;
+}
+.formulario-tarjeta .grupo-select i {
+  position: absolute;
+  color: rgb(110, 110, 110);
+  top: 18px;
+  right: 15px;
+  transition: .3s ease all;
+}
+.formulario-tarjeta .grupo-select:hover i {
+  color: black;
+}
+.formulario-tarjeta .btn-enviar {
+  border: none;
+  padding: 10px;
+  font-size: 22px;
+  color: #fff;
+  background: #1ce504;
+  box-shadow: 2px 2px 10px 0px rgb(12, 42, 212,0.4);
+  cursor: pointer;
+}
+.formulario-tarjeta .btn-enviar:hover{
+  color: rgb(4, 6, 7);
+}

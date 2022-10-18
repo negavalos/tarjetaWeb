@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Tarjeta web</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Tarjeta -->
+    <div class="contenedor">
+        <section class="tarjeta" id="tarjeta">
+            <div class="frontal">
+                <div class="logo-marca" id="logo-marca">
+                    <!--<img src="img/logos/visa.png" alt="">-->
+                </div>
+                <img src="img/chip.png" class="chip" alt="">
+                <div class="datos">
+                    <div class="grupo" id="numero">
+                        <p class="label">Número de Tarjeta</p>
+                        <p class="numero">#### #### #### ####</p>
+                    </div>
+                    <div class="flexbox">
+
+                        <div class="grupo" id="nombre">
+                            <p class="label">Nombre Tarjeta</p>
+                            <p class="nombre">Jhon Doe</p>
+                        </div>
+
+                        <div class="grupo" id="expiracion">
+                            <p class="label">Expiracion</p>
+                            <p class="expiracion"><span class="mes">MM</span> / <span class="year">AA</span></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="posterior">
+                <div class="barra-magnetica"></div>
+                    <div class="datos">
+                        <div class="grupo" id="firma">
+                            <p class="label">Firma</p>
+                            <div class="firma"><p></p></div>
+                        </div>
+                        <div class="grupo" id="ccv">
+                            <p class="label">CCV</p>
+                            <p class="ccv"></p>
+                        </div>
+                    </div>
+                    <p class="leyenda">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora placeat laudantium ad iusto natus odit amet delectus similique sunt, molestiae itaque soluta officia fuga veritatis, provident ullam corrupti neque assumenda?
+                    </p>
+                    <a href="#" class="link-banco">www.tubanco.com</a>
+            </div>
+        </section>
+
+    <!-- abrir formulario -->
+        <div class="contenedor-btn">
+            <button class="btn-abrir-formulario" id="btn-abrir-formulario">
+                <i class="fas fa-plus"></i>
+            </button>
+        </div>
+    <!-- Formulrio -->
+    <form class="formulario-tarjeta" id="formulario-tarjeta">
+        <div class="grupo">
+            <label for="inputNumero">Numero Tarjeta</label>
+            <input type="text" id="inputNumero" maxlength="19" autocomplete="off">
+        </div>
+        <div class="grupo">
+            <label for="inputNombre">Nombre</label>
+            <input type="text" id="inputNombre" maxlength="19" autocomplete="off">
+        </div>
+        <div class="flexbox">
+            <div class="grupo expira">
+                <label for="selectMes">Expira</label>
+                <div class="flexbox">
+                    <div class="grupo-select">
+                        <select name="mes" id="selectMes">
+                            <option disabled selected>Mes</option>
+                        </select>
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+                    <div class="grupo-select">
+                        <select name="year" id="selectYear">
+                            <option disabled selected>Año</option>
+                        </select>
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="grupo ccv">
+                <label for="inputCVV">CCV</label>
+                <input type="text" id="inputCCV" maxlength="3">
+            </div>
+        </div>
+        <button type="submit" class="btn-enviar">Enviar</button>
+
+    </form>
+
+
+    </div>
+
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
